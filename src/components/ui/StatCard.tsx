@@ -1,16 +1,14 @@
-// src/components/ui/StatCard.tsx
-import type { LucideIcon } from 'lucide-react'
 
-type StatCardProps = {
-  icon:    LucideIcon
-  label:   string
-  value:   number
-  color:   string         // text + icon color
-  bgColor: string         // icon background tint
-  onClick?: () => void
-}
+import type { StatCardProps } from "../../types";
 
-export function StatCard({ icon: Icon, label, value, color, bgColor, onClick }: StatCardProps) {
+export function StatCard({
+  icon: Icon,
+  label,
+  value,
+  color,
+  bgColor,
+  onClick,
+}: StatCardProps) {
   return (
     <div
       onClick={onClick}
@@ -20,7 +18,7 @@ export function StatCard({ icon: Icon, label, value, color, bgColor, onClick }: 
         rounded-lg
         p-4
         shadow-[var(--shadow-level-1)]
-        ${onClick ? 'cursor-pointer hover:border-[var(--color-border-hover)] hover:shadow-[var(--shadow-level-2)]' : ''}
+        ${onClick ? "cursor-pointer hover:border-[var(--color-border-hover)] hover:shadow-[var(--shadow-level-2)]" : ""}
         transition-all duration-200
       `}
     >
@@ -41,5 +39,5 @@ export function StatCard({ icon: Icon, label, value, color, bgColor, onClick }: 
         </div>
       </div>
     </div>
-  )
+  );
 }

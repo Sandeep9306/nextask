@@ -1,9 +1,8 @@
 // src/context/ThemeContext.tsx
-import { createContext, useState, useEffect, useMemo } from "react";
-import { type Theme, type ThemeContextType } from "../types";
+import { useState, useEffect, useMemo } from "react";
+import { type Theme } from "../types";
 import { STORAGE_KEYS } from "../constants";
-
-export const ThemeContext = createContext<ThemeContextType | null>(null);
+import { ThemeContext } from "./ThemeContext";
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {

@@ -1,10 +1,4 @@
-import {
-  createContext,
-  useCallback,
-  useEffect,
-  useMemo,
-  useReducer,
-} from "react";
+import { useCallback, useEffect, useMemo, useReducer } from "react";
 import {
   type TaskContextType,
   type TaskAction,
@@ -12,10 +6,8 @@ import {
   type Task,
   type Status,
 } from "../types";
-import { json } from "zod";
 import { STORAGE_KEYS } from "../constants";
-
-export const TaskContext = createContext<TaskContextType | null>(null);
+import { TaskContext } from "./TaskContext";
 
 function getInitialTasks(): Task[] {
   try {
@@ -24,7 +16,7 @@ function getInitialTasks(): Task[] {
       return JSON.parse(stored) as Task[];
     }
   } catch (error) {
-    console.error("Failed to load tasks from localStorage:', error");
+    console.error(`Failed to load tasks from localStorage: ${error}`);
   }
   return initialState.tasks;
 }
@@ -83,7 +75,7 @@ const initialState: TaskState = {
   ],
 };
 
-export function taskReducer(state: TaskState, action: TaskAction): TaskState {
+function taskReducer(state: TaskState, action: TaskAction): TaskState {
   switch (action.type) {
     case "ADD_TASK":
       return {
@@ -125,7 +117,6 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
     initialState, // fallback value
     () => ({ tasks: getInitialTasks() }),
   );
-
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEYS.TASKS, JSON.stringify(state.tasks));

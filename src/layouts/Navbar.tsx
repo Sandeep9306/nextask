@@ -9,9 +9,17 @@ export function Navbar() {
 
   function handleSearchChange(value: string) {
     if (location.pathname === "/tasks") {
-      value ? setSearchParams({ q: value }) : setSearchParams({});
+      if (value) {
+        setSearchParams({ q: value });
+      } else {
+        setSearchParams({});
+      }
     } else {
-      navigate(value ? `/tasks?q=${encodeURIComponent(value)}` : "/tasks");
+      if (value) {
+        navigate(`/tasks?q=${encodeURIComponent(value)}`);
+      } else {
+        navigate("/tasks");
+      }
     }
   }
   return (

@@ -7,7 +7,7 @@ import type { Status, Task } from "../../types";
 import { TaskForm } from "./components/TaskForm";
 import { Modal } from "../../components/ui/Modal";
 import type { TaskFormData } from "./schema/schema";
-import { date } from "zod";
+
 import {
   DndContext,
   DragOverlay,
@@ -23,10 +23,6 @@ const columns: Column[] = [
   { id: "in-progress", title: "In Progress" },
   { id: "done", title: "Done" },
 ];
-
-type filteredTasks = {
-  tasks: Task[];
-};
 
 export function TaskBoard() {
   const { tasks, deleteTask, stats, updateTask, addTask, moveTask } =

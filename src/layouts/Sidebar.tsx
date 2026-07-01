@@ -4,8 +4,6 @@ import {
   LayoutDashboard,
   CheckSquare,
   User,
-  Users,
-  Settings,
   Zap, // logo icon
 } from "lucide-react";
 

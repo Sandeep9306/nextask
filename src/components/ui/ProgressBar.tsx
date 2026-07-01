@@ -1,11 +1,6 @@
 // src/components/ui/ProgressBar.tsx
 
-type ProgressBarProps = {
-  label: string;
-  value: number;
-  total: number;
-  color: string; // pass a CSS variable color
-};
+import type { ProgressBarProps } from "../../types";
 
 export function ProgressBar({ label, value, total, color }: ProgressBarProps) {
   const percent = total > 0 ? Math.round((value / total) * 100) : 0;

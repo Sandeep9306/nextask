@@ -1,5 +1,5 @@
+import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
-import { boolean } from "zod";
 
 export type Priority = "low" | "medium" | "high";
 export type Status = "todo" | "in-progress" | "done";
@@ -77,4 +77,20 @@ export type ModalProps = {
   onClose: () => void;
   title: string;
   children: ReactNode;
+};
+
+export type ProgressBarProps = {
+  label: string;
+  value: number;
+  total: number;
+  color: string; // pass a CSS variable color
+};
+
+export type StatCardProps = {
+  icon: LucideIcon;
+  label: string;
+  value: number;
+  color: string; // text + icon color
+  bgColor: string; // icon background tint
+  onClick?: () => void;
 };
