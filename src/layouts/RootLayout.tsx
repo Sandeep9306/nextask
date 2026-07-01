@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import { Sidebar } from "./Sidebar";
 
-export const RootLayout = () => {
+export function RootLayout() {
   return (
     <>
       <div className="min-h-screen bg-[var(--color-background)]">
@@ -31,4 +31,4 @@ export const RootLayout = () => {
       </div>
     </>
   );
-};
+}
