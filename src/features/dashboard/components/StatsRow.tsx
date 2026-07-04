@@ -2,17 +2,15 @@
 import { useNavigate } from "react-router-dom";
 import { StatCard } from "../../../components/ui/StatCard";
 import { ListTodo, CheckCircle2, Clock, AlertTriangle } from "lucide-react";
-import type { TaskStats } from "../../../types";
+import type { StatsRowProps } from "../types";
 
-type StatsRowProps = {
-  stats: TaskStats;
-};
+
 
 export function StatsRow({ stats }: StatsRowProps) {
   const navigate = useNavigate();
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
       <StatCard
         icon={ListTodo}
         label="Total Tasks"

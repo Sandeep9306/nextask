@@ -1,8 +1,11 @@
 // src/layouts/Navbar.tsx
-import { Bell, Search, User } from "lucide-react";
+import { Search } from "lucide-react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { useProfile } from "../hooks/useProfile";
+import { ProfileAvatar } from "../features/Profile/components/ProfileAvatar";
 
 export function Navbar() {
+  const { profile } = useProfile();
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -33,6 +36,7 @@ export function Navbar() {
       flex items-center justify-between
       px-6
       z-10
+    
     "
     >
       {/* Left — Search */}
@@ -71,54 +75,20 @@ export function Navbar() {
 
       {/* Right — Actions */}
       <div className="flex items-center gap-3 ml-4">
-        {/* Notification Bell */}
-        <button
-          className="
-          relative
-          w-9 h-9
-          flex items-center justify-center
-          rounded
-          text-[var(--color-text-secondary)]
-          hover:bg-[var(--color-background)]
-          hover:text-[var(--color-text-primary)]
-          transition-colors
-        "
-        >
-          <Bell className="w-5 h-5" />
-          {/* Notification dot */}
-          <span
-            className="
-            absolute top-1.5 right-1.5
-            w-2 h-2
-            bg-[var(--color-danger)]
-            rounded-full
-          "
-          />
-        </button>
+        {/* Bell stays same */}
 
-        {/* Divider */}
         <div className="w-px h-6 bg-[var(--color-border)]" />
 
-        {/* User Profile */}
+        {/* User Profile — now uses real data! */}
         <button
           className="
           flex items-center gap-2
-          px-2 py-1
-          rounded
+          px-2 py-1 rounded
           hover:bg-[var(--color-background)]
           transition-colors
         "
         >
-          <div
-            className="
-            w-8 h-8
-            bg-[var(--color-primary)]
-            rounded-full
-            flex items-center justify-center
-          "
-          >
-            <User className="w-4 h-4 text-white" />
-          </div>
+          <ProfileAvatar name={profile.name} size="sm" /> {/* ← real avatar! */}
           <span
             className="
             text-sm font-medium
@@ -126,7 +96,7 @@ export function Navbar() {
             hidden md:block
           "
           >
-            Sandeep
+            {profile.name} {/* ← real name! */}
           </span>
         </button>
       </div>

@@ -1,14 +1,8 @@
 // src/features/tasks/components/TaskForm.tsx
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Task } from "../../../types";
-import { taskSchema, type TaskFormData } from "../schema/schema";
-
-type TaskFormProps = {
-  initialData?: Task | null; // null/undefined = adding new
-  onSubmit: (data: TaskFormData) => void;
-  onCancel: () => void;
-};
+import { taskSchema, type TaskFormData } from "../schema";
+import type { TaskFormProps } from "../types";
 
 export function TaskForm({ initialData, onSubmit, onCancel }: TaskFormProps) {
   const {
@@ -21,7 +15,7 @@ export function TaskForm({ initialData, onSubmit, onCancel }: TaskFormProps) {
       title: initialData?.title ?? "",
       description: initialData?.description ?? "",
       status: initialData?.status ?? "todo",
-      priority: initialData?.priority ?? "medium",
+      priority: initialData?.priority ?? "low",
       dueDate: initialData?.dueDate ?? "",
     },
   });

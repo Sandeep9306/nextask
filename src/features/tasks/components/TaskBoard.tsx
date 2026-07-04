@@ -1,12 +1,12 @@
 import { useMemo, useState } from "react";
-import { useTasks } from "../../hooks/useTasks";
-import { BoardHeader } from "./components/BoardHeader";
-import { TaskColumn } from "./components/TaskColumn";
-import type { Column } from "./types";
-import type { Status, Task } from "../../types";
-import { TaskForm } from "./components/TaskForm";
-import { Modal } from "../../components/ui/Modal";
-import type { TaskFormData } from "./schema/schema";
+import { useTasks } from "../../../hooks/useTasks";
+import { BoardHeader } from "./BoardHeader";
+import { TaskColumn } from "./TaskColumn";
+import type { Column } from "../types";
+import type { Status, Task } from "../../../types";
+import { TaskForm } from "./TaskForm";
+import { Modal } from "../../../components/ui/Modal";
+import type { TaskFormData } from "../schema";
 
 import {
   DndContext,

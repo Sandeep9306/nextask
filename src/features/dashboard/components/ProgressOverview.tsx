@@ -1,19 +1,17 @@
 // src/features/dashboard/components/ProgressOverview.tsx
-import { ProgressBar } from '../../../components/ui/ProgressBar'
-import type { TaskStats } from '../../../types'
-
-type ProgressOverviewProps = {
-  stats: TaskStats
-}
+import { ProgressBar } from "../../../components/ui/ProgressBar";
+import type { ProgressOverviewProps } from "../types";
 
 export function ProgressOverview({ stats }: ProgressOverviewProps) {
   return (
-    <div className="
+    <div
+      className="
       bg-[var(--color-surface)]
       border border-[var(--color-border)]
       rounded-lg p-5
       shadow-[var(--shadow-level-1)]
-    ">
+    "
+    >
       <h2 className="text-sm font-semibold text-[var(--color-text-primary)] mb-4">
         Progress Overview
       </h2>
@@ -45,5 +43,5 @@ export function ProgressOverview({ stats }: ProgressOverviewProps) {
         </div>
       )}
     </div>
-  )
+  );
 }

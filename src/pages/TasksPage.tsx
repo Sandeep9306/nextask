@@ -1,4 +1,4 @@
-import { TaskBoard } from "../features/tasks/TaskBoard";
+import { TaskBoard } from "../features/tasks";
 
 export const TasksPage = () => {
   return (

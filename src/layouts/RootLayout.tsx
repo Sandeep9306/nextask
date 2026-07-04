@@ -10,14 +10,14 @@ export function RootLayout() {
         <Sidebar />
 
         {/* Content area — offset by sidebar width */}
-        <div className="ml-[240px] flex flex-col min-h-screen">
+        <div className="md:ml-[240px] flex flex-col min-h-screen">
           {/* Navbar — fixed top, but inside this offset wrapper's flow */}
           <Navbar />
 
           {/* Page content — offset by navbar height, scrolls vertically only */}
           <main
             className="
-          pt-[56px]
+          pt-[66px]
           flex-1
           p-6
           overflow-x-hidden

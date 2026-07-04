@@ -1,24 +1,22 @@
 // src/features/dashboard/components/PriorityBreakdown.tsx
-import { ProgressBar } from '../../../components/ui/ProgressBar'
-import type { TaskStats } from '../../../types'
-
-type PriorityBreakdownProps = {
-  stats: TaskStats
-}
+import { ProgressBar } from "../../../components/ui/ProgressBar";
+import type { PriorityBreakdownProps } from "../types";
 
 export function PriorityBreakdown({ stats }: PriorityBreakdownProps) {
   const totalPriority =
     stats.priorityCounts.low +
     stats.priorityCounts.medium +
-    stats.priorityCounts.high
+    stats.priorityCounts.high;
 
   return (
-    <div className="
+    <div
+      className="
       bg-[var(--color-surface)]
       border border-[var(--color-border)]
       rounded-lg p-5
       shadow-[var(--shadow-level-1)]
-    ">
+    "
+    >
       <h2 className="text-sm font-semibold text-[var(--color-text-primary)] mb-4">
         Priority Breakdown
       </h2>
@@ -50,5 +48,5 @@ export function PriorityBreakdown({ stats }: PriorityBreakdownProps) {
         </div>
       )}
     </div>
-  )
+  );
 }

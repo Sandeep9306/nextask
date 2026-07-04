@@ -40,7 +40,7 @@ export const Sidebar = () => {
       fixed top-0 left-0
       w-[240px] h-screen
       bg-[var(--color-navy)]
-      flex flex-col
+      hidden md:flex flex-col
       z-20
     "
     >

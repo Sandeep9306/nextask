@@ -1,12 +1,14 @@
 // src/pages/DashboardPage.tsx
+import {
+  DueSoonList,
+  PriorityBreakdown,
+  ProgressOverview,
+  StatsRow,
+  WelcomeHeader,
+} from "../features/dashboard";
 import { useTasks } from "../hooks/useTasks";
-import { WelcomeHeader } from "../features/dashboard/components/WelcomeHeader";
-import { StatsRow } from "../features/dashboard/components/StatsRow";
-import { ProgressOverview } from "../features/dashboard/components/ProgressOverview";
-import { DueSoonList } from "../features/dashboard/components/DueSoonList";
-import { PriorityBreakdown } from "../features/dashboard/components/PriorityBreakdown";
 
-export const DashboardPage = () => {
+export function DashboardPage  ()  {
   const { stats } = useTasks();
 
   const dueTodayCount = stats.dueSoon.filter((t) => {

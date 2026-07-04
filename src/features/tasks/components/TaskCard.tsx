@@ -1,7 +1,7 @@
 import { Pencil, Trash2, Bot, Calendar } from "lucide-react";
-import type { Task } from "../../../types";
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
+import type { TaskCardProps } from "../types";
 
 // ── Helper: format date ───────────────────────────────
 function formatDate(dateStr: string): string {
@@ -32,11 +32,7 @@ const priorityConfig = {
 };
 
 // ── Types ─────────────────────────────────────────────
-type TaskCardProps = {
-  task: Task;
-  onEdit: (task: Task) => void;
-  onDelete: (id: string) => void;
-};
+
 
 // ── Component ─────────────────────────────────────────
 export function TaskCard({ task, onEdit, onDelete }: TaskCardProps) {

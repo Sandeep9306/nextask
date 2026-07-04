@@ -7,7 +7,7 @@ NexTask is a modern, high-performance task management application designed to st
 ---
 
 ## 🔗 Live Demo
-Check out the live application here: **[NexTask Live Link](https://nextask-sandeep.vercel.app/)** *(Replace with your active Vercel link)*
+Check out the live application here: **[NexTask Live Link](https://nextask-pi.vercel.app/)** *(Replace with your active Vercel link)*
 
 ---
 

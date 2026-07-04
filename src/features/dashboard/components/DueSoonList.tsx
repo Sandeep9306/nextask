@@ -1,13 +1,8 @@
 // src/features/dashboard/components/DueSoonList.tsx
 import { useNavigate } from "react-router-dom";
 import { Calendar } from "lucide-react";
-
-import type { Task } from "../../../types";
 import { getDateUrgencyColor, getRelativeDateLabel } from "../../../lib/utils";
-
-type DueSoonListProps = {
-  tasks: Task[]; // already filtered + sorted from stats.dueSoon
-};
+import type { DueSoonListProps } from "../types";
 
 export function DueSoonList({ tasks }: DueSoonListProps) {
   const navigate = useNavigate();

@@ -1,4 +1,5 @@
 import type { Status, Task, TaskStats } from "../../../types";
+import type { TaskFormData } from "../schema";
 
 export type BoardHeaderProps = {
   stats: TaskStats;
@@ -22,4 +23,10 @@ export type TaskColumnProps = {
   onAddTask: () => void;
   onEditTask: (task: Task) => void;
   onDeleteTask: (id: string) => void;
+};
+
+export type TaskFormProps = {
+  initialData?: Task | null; // null/undefined = adding new
+  onSubmit: (data: TaskFormData) => void;
+  onCancel: () => void;
 };

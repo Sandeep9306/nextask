@@ -8,6 +8,7 @@ import {
 } from "../types";
 import { STORAGE_KEYS } from "../constants";
 import { TaskContext } from "./TaskContext";
+import toast from "react-hot-toast";
 
 function getInitialTasks(): Task[] {
   try {
@@ -124,16 +125,26 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
 
   const addTask = useCallback((task: Task) => {
     dispatch({ type: "ADD_TASK", payload: task });
+    toast.success("Task created!");
   }, []);
   const deleteTask = useCallback((id: string) => {
     dispatch({ type: "DELETE_TASK", payload: id });
+    toast.success("Task deleted!");
   }, []);
 
   const updateTask = useCallback((task: Task) => {
     dispatch({ type: "UPDATE_TASK", payload: task });
+    toast.success("Task updated!");
   }, []);
   const moveTask = useCallback((id: string, newStatus: Status) => {
     dispatch({ type: "MOVE_TASK", payload: { id, newStatus } });
+    // Human-readable status label
+    const labels: Record<Status, string> = {
+      todo: "To Do",
+      "in-progress": "In Progress",
+      done: "Done",
+    };
+    toast.success(`Moved to ${labels[newStatus]}`);
   }, []);
 
   const stats = useMemo(() => {

@@ -1,5 +1,7 @@
 import type { LucideIcon } from "lucide-react";
+import type React from "react";
 import type { ReactNode } from "react";
+import type { Profile } from "../features/Profile/types";
 
 export type Priority = "low" | "medium" | "high";
 export type Status = "todo" | "in-progress" | "done";
@@ -93,4 +95,14 @@ export type StatCardProps = {
   color: string; // text + icon color
   bgColor: string; // icon background tint
   onClick?: () => void;
+};
+
+export type ProfileContextType = {
+  profile: Profile;
+  setProfile: (profile: Profile) => void;
+};
+
+export type ProfileAvatarProps = {
+  name: string;
+  size?: "sm" | "md" | "lg";
 };
