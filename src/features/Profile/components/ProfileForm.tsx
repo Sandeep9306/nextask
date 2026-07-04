@@ -1,12 +1,7 @@
 import { useForm } from "react-hook-form";
 import { profileSchema, type ProfileFormData } from "../schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Profile } from "../types";
-
-export type ProfileFormType = {
-  initialData: Profile;
-  onSubmit: (profile: ProfileFormData) => void;
-};
+import type { ProfileFormType } from "../types";
 
 function FormField({
   label,

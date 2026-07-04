@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { STORAGE_KEYS } from "../constants";
-import type { ProfileContextType } from "../types";
 import type { Profile } from "../features/Profile/types";
 import { ProfileContext } from "./ProfileContext";
 

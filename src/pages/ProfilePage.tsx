@@ -1,7 +1,9 @@
 import toast from "react-hot-toast";
-import { ProfileForm } from "../features/Profile";
-import { ProfileAvatar } from "../features/Profile/components/ProfileAvatar";
-import type { ProfileFormData } from "../features/Profile/schema";
+import {
+  ProfileAvatar,
+  ProfileForm,
+  type ProfileFormData,
+} from "../features/Profile";
 import { useProfile } from "../hooks/useProfile";
 
 export function ProfilePage() {
@@ -68,4 +70,3 @@ export function ProfilePage() {
       </div>
     </div>
   );
-}
